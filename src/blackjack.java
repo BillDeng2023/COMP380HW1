@@ -10,12 +10,12 @@ import java.util.Scanner;
 
 public class blackjack {
     public static void main(String[] args) throws IOException {
-        BufferedReader bufferedReader = new BufferedReader(new FileReader("src/blackjack_table_samples-V1.csv"));
+        BufferedReader bufferedReader = new BufferedReader(new FileReader("src/blackjack_table_samples-V3.csv"));
         PrintWriter printWriter = new PrintWriter(new BufferedWriter(new FileWriter("src/blackjack_output.csv")));
         String line = "";
         //Note that in HW1 description the starting index should be 9, but it's different for
         //the sample csv file for some reason
-        int startingIndex = 12;
+        int startingIndex = 8;
 
         while((line = bufferedReader.readLine()) != null){
             String[] str = line.split(",");
