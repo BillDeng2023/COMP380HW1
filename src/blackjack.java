@@ -9,6 +9,13 @@ import java.util.StringTokenizer;
 import java.util.Scanner;
 
 public class blackjack {
+    /**
+     * The main function reads in data from the given blackjack situation samples and writes
+     * an output document containing the situations and next step for the player based
+     * on a simple algorithm.
+     * @param args
+     * @throws IOException throws exception when there is an invalid card
+     */
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new FileReader("src/blackjack_table_samples-V3.csv"));
         PrintWriter printWriter = new PrintWriter(new BufferedWriter(new FileWriter("src/blackjack_output.csv")));
@@ -47,6 +54,14 @@ public class blackjack {
         }
     }
 
+    /**
+     * This method parses a unicode string representation for a poker card into a card
+     * object.
+     * @param hexcoding a string containing the unicode representation of the card
+     * @return  a card object
+     * @throws Exception when the string is not a valid unicode representation of a
+     *         poker card used in blackjack.
+     */
     public static card createCard(String hexcoding) throws Exception{
         //need to confirm capitalization
         Rank rank = null;
