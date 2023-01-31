@@ -25,6 +25,8 @@ public class blackjack {
         int startingIndex = 8;
 
         while((line = bufferedReader.readLine()) != null){
+            //skip description line in sample csv file
+            if(line.charAt(0) == '=') continue;
             String[] str = line.split(",");
             //create hand
             hand h = new hand();
@@ -49,9 +51,11 @@ public class blackjack {
                     printWriter.println("HIT" + line);
                 }
             }
-            //skip description line in sample csv file
-            line = bufferedReader.readLine();
+
         }
+
+        bufferedReader.close();
+        printWriter.close();
     }
 
     /**
